@@ -7,13 +7,32 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 }
-
+html {
+  background-color: rgb(0, 0, 0);
+}
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
+}
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4b5563;
+  /* border: solid 3px #ffff; */
+  border-radius: 7px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6b7280;
 }
 
 body {

@@ -1,6 +1,8 @@
 "use client";
-// import Image from "next/image";
+import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
+import * as dayjs from "dayjs";
 
 const Home = () => {
   const [mounted, setMounted] = useState(false);
@@ -30,13 +32,15 @@ const Home = () => {
     <div
       className={`${
         mounted
-          ? "bg-gradient-to-tl opacity-100 to-gray-900 from-black flex min-h-screen p-4 justify-center pt-24 md:items-center transition-all transform duration-500"
-          : "opacity-0 transition-all transform duration-500"
+          ? "bg-gradient-to-tl opacity-100 to-gray-900 from-black flex min-h-screen p-4 justify-center pt-24 md:items-center transition-all transform duration-1000"
+          : "opacity-50 "
       }`}
     >
       <div className="hidden fixed md:flex h-full opacity-5 top-0 left-0 w-full justify-center items-center">
-        {/* <Image
+        <Image
           draggable={false}
+          aria-readonly
+          aria-disabled
           className={`${
             mounted
               ? "delay-500 animate-pulse opacity-100 ease-in-out duration-1000 transition-all transform"
@@ -46,8 +50,179 @@ const Home = () => {
           width={screen.width}
           objectFit={"contain"}
           alt=""
-          src="/background.gif"
-        /> */}
+          src="https://res.cloudinary.com/dwl0svlrm/image/upload/v1692865826/background_tmp8bb.gif"
+        />
+      </div>
+      <div className="text-gray-400 w-full md:w-1/3  space-y-8">
+        <p
+          className={
+            mounted
+              ? "text-3xl text-gray-200 delay-100 ease-in-out duration-1000 transition-opacity transform font-semibold"
+              : "opacity-0"
+          }
+        >
+          Zuunbileg.B
+        </p>
+        <p
+          className={
+            mounted
+              ? "delay-200 translate-y-0  ease-in-out duration-1000 transition-all transform"
+              : "opacity-0 translate-y-8"
+          }
+        >
+          Hey, I am Zuunbileg, a system development engineer.
+        </p>
+        <p
+          className={
+            mounted
+              ? "delay-200 translate-y-0  ease-in-out duration-1000 transition-all transform"
+              : "opacity-0 translate-y-8 "
+          }
+        >
+          Working at
+          <Link
+            href="https://www.unitel.mn/unitel/about"
+            className="text-gray-200 hover:underline font-semibold"
+          >
+            {` Unitel`}
+          </Link>
+          .
+          <br />
+          Former employee at
+          <Link
+            href="https://golomtbank.com/"
+            className="text-gray-200 hover:underline font-semibold"
+          >
+            {` Golomt bank, `}
+          </Link>
+          <Link
+            href="https://smartshrefre.mn/"
+            className="text-gray-200 hover:underline font-semibold"
+          >
+            {` Smartdeal `}
+          </Link>
+          and
+          <span className="text-gray-200 font-semibold">{` UNICEF `}</span>
+          {`(
+          "Namuu" project )`}
+          .
+          <br />
+          With
+          <span className="text-gray-200 font-semibold">{` 4 `}</span> years of
+          experience.
+        </p>
+        <p
+          className={
+            mounted
+              ? "delay-500 translate-y-0 ease-in-out duration-500 transition-all transform"
+              : "opacity-0 translate-y-8"
+          }
+        >
+          Dreaming up ideas and making them come true is where my passion lies.
+          You can find my full projects list
+          <Link href="/projects" className="text-white font-semibold underline">
+            {` here `}
+          </Link>
+          . I also do some graphic design projects, photograph, interactivity
+          experiments.
+        </p>
+        <p
+          className={
+            mounted
+              ? "delay-500 translate-y-0 ease-in-out duration-1000 transition-all transform"
+              : "opacity-0 translate-y-8"
+          }
+        >
+          Outside of programming, I enjoy mountain biking, playing volleyball,
+          taking photographs and cooking. Some of my photos can be found on{" "}
+          <Link
+            className="text-gray-200 hover:underline font-semibold"
+            href={"https://www.instagram.com/zuna.btw/?hl=en"}
+          >
+            {` Instagram `}
+          </Link>
+          . If you happen to be in the same city I live (currently in
+          Ulaanbaatar), maybe we can hang out and take some photos or code
+          together.
+        </p>
+        <div className="flex justify-center">
+          <div className="h-px w-20 bg-gray-400 rounded-full"></div>
+        </div>
+        <div
+          className={`space-y-2
+            ${
+              mounted
+                ? "delay-1000 translate-y-0 ease-in-out duration-1000 transition-all transform"
+                : "opacity-0 translate-y-8"
+            }`}
+        >
+          <p>Find me on</p>
+          <div className="flex gap-4 flex-wrap">
+            {socials.map((social) => (
+              <Link
+                className="flex hover:text-gray-200 duration-1000 transition-all transform items-center gap-2"
+                key={social.title}
+                href={social.link}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path d={social.icon} />
+                </svg>
+                <p>{social.title}</p>
+              </Link>
+            ))}
+            <Link
+              className="flex hover:text-gray-200 duration-1000 transition-all transform items-center gap-2"
+              href={"/"}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                className="bi bi-discord h-6 w-6"
+                viewBox="0 0 16 16"
+              >
+                <path d="M13.545 2.907a13.227 13.227 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.19 12.19 0 0 0-3.658 0 8.258 8.258 0 0 0-.412-.833.051.051 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.041.041 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032c.001.014.01.028.021.037a13.276 13.276 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019c.308-.42.582-.863.818-1.329a.05.05 0 0 0-.01-.059.051.051 0 0 0-.018-.011 8.875 8.875 0 0 1-1.248-.595.05.05 0 0 1-.02-.066.051.051 0 0 1 .015-.019c.084-.063.168-.129.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.052.052 0 0 1 .053.007c.08.066.164.132.248.195a.051.051 0 0 1-.004.085 8.254 8.254 0 0 1-1.249.594.05.05 0 0 0-.03.03.052.052 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.235 13.235 0 0 0 4.001-2.02.049.049 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.034.034 0 0 0-.02-.019Zm-8.198 7.307c-.789 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612Zm5.316 0c-.788 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612Z" />
+              </svg>
+              <p>Discord server</p>
+            </Link>
+          </div>
+        </div>
+        <p
+          className={
+            mounted
+              ? "delay-1000 translate-y-0 ease-in-out duration-1000 transition-all transform"
+              : "opacity-0 translate-y-8"
+          }
+        >
+          If you enjoy my works, consider sponsoring me on
+          <Link href={"/"} className="text-gray-200 font-semibold">
+            {` GitHub Sponsor `}
+          </Link>
+          or{" "}
+          <Link href={"/"} className="text-gray-200 font-semibold">
+            {` Paypal `}
+          </Link>{" "}
+          to keep them sustainable.
+        </p>
+        <div
+          className={`flex gap-4 text-gray-500 ${
+            mounted
+              ? "delay-1000 translate-y-0 ease-in-out duration-1000 transition-all transform"
+              : "opacity-0 translate-y-8"
+          }`}
+        >
+          <Link
+            href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
+            className="underline text-gray-200"
+          >
+            CC BY-NC-SA 4.0{" "}
+          </Link>
+          {dayjs.default().format("YYYY")} © Zuunbileg
+        </div>
       </div>
     </div>
   );
