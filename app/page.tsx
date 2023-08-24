@@ -37,21 +37,22 @@ const Home = () => {
       }`}
     >
       <div className="hidden fixed md:flex h-full opacity-5 top-0 left-0 w-full justify-center items-center">
-        <Image
-          draggable={false}
-          aria-readonly
-          aria-disabled
-          className={`${
-            mounted
-              ? "delay-500 animate-pulse opacity-100 ease-in-out duration-1000 transition-all transform"
-              : "opacity-0"
-          }`}
-          height={500}
-          width={window.innerWidth}
-          objectFit={"contain"}
-          alt=""
-          src="https://res.cloudinary.com/dwl0svlrm/image/upload/v1692865826/background_tmp8bb.gif"
-        />
+        <div className="h-1/2 w-screen">
+          <Image
+            draggable={false}
+            aria-readonly
+            aria-disabled
+            className={`${
+              mounted
+                ? "delay-500 animate-pulse opacity-100 ease-in-out duration-1000 transition-all transform"
+                : "opacity-0"
+            }`}
+            layout="fill"
+            objectFit={"contain"}
+            alt=""
+            src="https://res.cloudinary.com/dwl0svlrm/image/upload/v1692865826/background_tmp8bb.gif"
+          />
+        </div>
       </div>
       <div className="text-gray-400 w-full md:w-1/3  space-y-8">
         <p
