@@ -22,6 +22,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "models/userModel.ts", "models/projectModel.ts", "models/podcastModel.ts", "models/experimentModel.ts", "models/blogModel.ts", "configs/mongodb_connection.ts", "app/api/route.ts"],
   "exclude": ["node_modules"]
 }
