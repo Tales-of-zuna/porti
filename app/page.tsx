@@ -47,7 +47,7 @@ const Home = () => {
               : "opacity-0"
           }`}
           height={500}
-          width={1080}
+          width={window.innerWidth}
           objectFit={"contain"}
           alt=""
           src="https://res.cloudinary.com/dwl0svlrm/image/upload/v1692865826/background_tmp8bb.gif"
