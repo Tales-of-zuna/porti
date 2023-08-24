@@ -46,7 +46,7 @@ const Home = () => {
           width={screen.width}
           objectFit={"contain"}
           alt=""
-          src={"/assets/background.gif"}
+          src="/background.gif"
         />
       </div>
     </div>
