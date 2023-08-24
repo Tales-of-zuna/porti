@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image";
+// import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const Home = () => {
@@ -35,7 +35,7 @@ const Home = () => {
       }`}
     >
       <div className="hidden fixed md:flex h-full opacity-5 top-0 left-0 w-full justify-center items-center">
-        <Image
+        {/* <Image
           draggable={false}
           className={`${
             mounted
@@ -47,7 +47,7 @@ const Home = () => {
           objectFit={"contain"}
           alt=""
           src="/background.gif"
-        />
+        /> */}
       </div>
     </div>
   );
