@@ -34,21 +34,7 @@ const Blogs = () => {
           : "opacity-50"
       }`}
     >
-      <div className="hidden fixed md:flex h-full opacity-5 top-0 left-0 w-full justify-center items-center">
-        <Image
-          draggable={false}
-          className={`${
-            mounted
-              ? "delay-500 animate-pulse opacity-100 ease-in-out duration-1000 transition-all transform"
-              : "opacity-0"
-          }`}
-          height={500}
-          width={screen.width}
-          objectFit={"contain"}
-          alt=""
-          src="https://res.cloudinary.com/dwl0svlrm/image/upload/v1692865826/background_tmp8bb.gif"
-        />
-      </div>
+      <div className="hidden fixed md:flex h-full opacity-5 top-0 left-0 w-full justify-center items-center"></div>
     </div>
   );
 };
